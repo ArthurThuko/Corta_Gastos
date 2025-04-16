@@ -67,25 +67,21 @@ void excluirGasto(No **inicio, char nome[25])
             if (atual->anterior == NULL && atual->proximo == NULL)
             {
                 *inicio = NULL;
-                break;
             }
 
             if (atual->anterior == NULL)
             {
                 *inicio = atual->proximo;
                 (*inicio)->anterior = NULL;
-                break;
             }
             else if (atual->proximo == NULL)
             {
                 atual->anterior->proximo = atual->proximo;
-                break;
             }
             else
             {
                 atual->anterior->proximo = atual->proximo;
                 atual->proximo->anterior = atual->anterior;
-                break;
             }
 
             free(atual);
