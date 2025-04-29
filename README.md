@@ -31,7 +31,7 @@ Repositório para o projeto Corta_Gasto que se baseia em um código em C onde o 
  **Funções Principais** ⚖️
 
  #### `No *criarNo(Gasto gasto)`
- Aloca e inicializa um novo nó da lista com os dados de um gasto.
+ Inicializa um novo nó da lista com os dados de um gasto.
 
  #### `void inserirGasto(No **inicio, Gasto gasto)`
  Adiciona um novo gasto ao final da lista encadeada.
@@ -40,7 +40,7 @@ Repositório para o projeto Corta_Gasto que se baseia em um código em C onde o 
  Percorre a lista e imprime todos os gastos registrados.
 
  #### `void excluirGasto(No **inicio, char nome[25])`
- Busca e remove o primeiro gasto da lista com o nome fornecido. Caso não encontre, exibe uma mensagem ao usuário.
+ Busca e remove o primeiro gasto da lista com o nome fornecido.
 
  #### `void modificarGasto(No **inicio, Gasto gastomod, char nome[25])`
  Altera os dados de um gasto já existente, identificado pelo seu nome original.
@@ -72,7 +72,7 @@ Repositório para o projeto Corta_Gasto que se baseia em um código em C onde o 
 
  **Estrutura do Arquivo de Dados 📂**
 
- O arquivo `banco_dados.txt` armazena os dados no seguinte formato:
+ O arquivo `banco_dados.txt` armazena os dados no seguinte formato:  Cada par de linhas representa um gasto.
 
  ```
  nome_do_gasto
@@ -81,5 +81,3 @@ Repositório para o projeto Corta_Gasto que se baseia em um código em C onde o 
  valor
  ...
  ```
-
- Cada par de linhas representa um gasto.
