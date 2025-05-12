@@ -74,10 +74,22 @@ Repositório para o projeto Corta_Gasto que se baseia em um código em C onde o 
 
  O arquivo `banco_dados.txt` armazena os dados no seguinte formato:  Cada par de linhas representa um gasto.
 
- ```
+```
  nome_do_gasto
  valor
  nome_do_gasto
  valor
  ...
- ```
+```
+
+**Compilação do Projeto 📠**
+
+Para compilar o projeto, utilize o seguinte comando no terminal:
+
+```
+gcc main.c -o main
+```
+Para executar o programa após a compilação:
+```
+./main
+```
