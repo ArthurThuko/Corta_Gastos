@@ -157,10 +157,12 @@ void procurarGasto(No *inicio, char nome[25])
     printf("\nSoma total dos gasto sobre %s: %.2f\n", nome, soma);
 }
 
-void salvarGastos(No* inicio) {
-    FILE* arquivo = fopen(ARQUIVO_NOME, "w");
+void salvarGastos(No *inicio)
+{
+    FILE *arquivo = fopen(ARQUIVO_NOME, "w");
 
-    while (inicio != NULL) {
+    while (inicio != NULL)
+    {
         fprintf(arquivo, "%s\n%.2f\n", inicio->gasto.nome, inicio->gasto.valor);
         inicio = inicio->proximo;
     }
@@ -168,20 +170,24 @@ void salvarGastos(No* inicio) {
     fclose(arquivo);
 }
 
-void carregarGastos(No** inicio) {
-    FILE* arquivo = fopen(ARQUIVO_NOME, "r");
+void carregarGastos(No **inicio)
+{
+    FILE *arquivo = fopen(ARQUIVO_NOME, "r");
 
-    if (arquivo == NULL) {
+    if (arquivo == NULL)
+    {
         return;
     }
 
     Gasto g;
     char linha[25];
 
-    while (fgets(g.nome, sizeof(g.nome), arquivo) != NULL) {
+    while (fgets(g.nome, sizeof(g.nome), arquivo) != NULL)
+    {
         g.nome[strcspn(g.nome, "\n")] = '\0';
 
-        if (fgets(linha, sizeof(linha), arquivo) != NULL) {
+        if (fgets(linha, sizeof(linha), arquivo) != NULL)
+        {
             g.valor = strtof(linha, NULL);
             inserirGasto(inicio, g);
         }
@@ -202,7 +208,7 @@ int main()
 
     do
     {
-        printf("\n1 - Listar gastos\n2 - Incluir um novo gasto\n3 - Excluir um gasto\n4 - Modificar um gasto\n5 - Mostrar dados estatisticos\n6 - Procurar gasto especifico\n0 - Encerrar aplicacao\n");
+        printf("\n1 - Listar gastos\n2 - Incluir um novo gasto\n3 - Excluir um gasto\n4 - Modificar um gasto\n5 - Mostrar dados estatisticos\n6 - Procurar gasto especifico\n7 - Limpar Terminal\n0 - Encerrar aplicacao\n");
 
         printf("\nDigite sua escolha: ");
         scanf("%d", &escolha);
@@ -225,7 +231,7 @@ int main()
             printf("Incluir um novo gasto\n");
 
             printf("\nDigite o nome do gasto: ");
-            scanf(" %25[^\n]", &gasto.nome);
+            scanf(" %25[^\n]", gasto.nome);
 
             printf("\nDigite o valor do gasto: ");
             scanf("%f", &gasto.valor);
@@ -237,7 +243,7 @@ int main()
             printf("Excluir um gasto\n");
 
             printf("\nDigite o nome do gasto para ser excluido: ");
-            scanf(" %25[^\n]", &nome);
+            scanf(" %25[^\n]", nome);
 
             excluirGasto(&lista, nome);
 
@@ -246,10 +252,10 @@ int main()
             printf("Modificar um gasto\n");
 
             printf("\nDigite o nome do gasto a ser modificado: ");
-            scanf(" %25[^\n]", &nome);
+            scanf(" %25[^\n]", nome);
 
             printf("\nDigite o nome modificado: ");
-            scanf(" %25[^\n]", &gasto.nome);
+            scanf(" %25[^\n]", gasto.nome);
 
             printf("\nDigite o valor modificado: ");
             scanf("%f", &gasto.valor);
@@ -267,9 +273,16 @@ int main()
             printf("Procurar gastos especificos\n");
 
             printf("\nDigite o nome do gasto para ser procurado: ");
-            scanf(" %25[^\n]", &nome);
+            scanf(" %25[^\n]", nome);
 
             procurarGasto(lista, nome);
+
+            break;
+
+        case 7:
+            printf("Limpar o terminal\n");
+
+            system("cls");
 
             break;
         default:
