@@ -68,6 +68,7 @@ Repositório para o projeto Corta_Gasto que se baseia em um código em C onde o 
  4. Editar um gasto
  5. Visualizar estatísticas gerais
  6. Buscar gastos por nome
+ 7. Limpar o terminal
  0. Encerrar a aplicação (com salvamento dos dados)
 
  **Estrutura do Arquivo de Dados 📂**
