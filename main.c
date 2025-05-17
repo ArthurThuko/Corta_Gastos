@@ -4,20 +4,20 @@
 
 #define ARQUIVO_NOME "banco_dados.txt"
 
-typedef struct Gasto
+typedef struct Gasto //Estrutura básica de um Gasto
 {
     char nome[25];
     float valor;
 } Gasto;
 
-typedef struct No
+typedef struct No //Estrutura básica de um nó duplo
 {
     Gasto gasto;
     struct No *anterior;
     struct No *proximo;
 } No;
 
-No *criarNo(Gasto gasto)
+No *criarNo(Gasto gasto) //Para gerar um nó "limpo"
 {
     No *novo = (No *)malloc(sizeof(No));
     novo->gasto = gasto;
@@ -26,7 +26,7 @@ No *criarNo(Gasto gasto)
     return novo;
 };
 
-void inserirGasto(No **inicio, Gasto gasto)
+void inserirGasto(No **inicio, Gasto gasto) //Inseri o Nó na lista
 {
     No *novo = criarNo(gasto);
 
@@ -72,7 +72,7 @@ void excluirGasto(No **inicio, char nome[25])
             if (atual->anterior == NULL)
             {
                 *inicio = atual->proximo;
-                (*inicio)->anterior = NULL;
+                (*inicio)->anterior = NULL; //O parêntese prioriza o *
             }
             else if (atual->proximo == NULL)
             {
@@ -182,13 +182,13 @@ void carregarGastos(No **inicio)
     Gasto g;
     char linha[25];
 
-    while (fgets(g.nome, sizeof(g.nome), arquivo) != NULL)
+    while (fgets(g.nome, sizeof(g.nome), arquivo) != NULL) //Pega do arquivo tudo no tamanho de um g.nome e coloca na variável
     {
-        g.nome[strcspn(g.nome, "\n")] = '\0';
+        g.nome[strcspn(g.nome, "\n")] = '\0'; //Tirando o \n e substituindo pelo \0
 
         if (fgets(linha, sizeof(linha), arquivo) != NULL)
         {
-            g.valor = strtof(linha, NULL);
+            g.valor = strtof(linha, NULL); //Converte para Float e ignora o que tem depois dos números
             inserirGasto(inicio, g);
         }
     }
