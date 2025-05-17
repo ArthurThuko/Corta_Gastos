@@ -65,21 +65,27 @@ Repositório para o projeto Corta_Gasto que se baseia em um código em C onde o 
  ![Menu](https://github.com/user-attachments/assets/c183785a-1d11-4ab1-9c68-283b0343f38b)
 
  1- Listar todos os gastos cadastrados
+ 
  ![Listar](https://github.com/user-attachments/assets/bc134449-2ddc-40a0-ac66-198d573476c4)
  
  2- Adicionar um novo gasto
+ 
  ![Add](https://github.com/user-attachments/assets/40a4a5cd-ed75-4024-b7ca-00ed53a82662)
 
  3- Remover um gasto existente
+ 
  ![Excluir](https://github.com/user-attachments/assets/f93de265-d76d-4ccc-a3fa-5038ff28f3e5)
 
  4- Modificar um gasto
+ 
  ![Modificar](https://github.com/user-attachments/assets/2e53e839-5822-4cb0-a12f-6b10a343f51d)
 
  5- Visualizar estatísticas gerais
+ 
  ![Estatísticos](https://github.com/user-attachments/assets/2c66f3e9-9ebc-411f-b5a9-8730782dc892)
 
  6- Buscar gastos por nome
+ 
  ![Procurar](https://github.com/user-attachments/assets/012d3852-03b4-4ed3-88e4-96b7a8802848)
 
  7- Limpar o terminal
